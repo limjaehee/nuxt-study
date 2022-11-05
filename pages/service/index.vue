@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="main-wrap">
     <Header></Header>
   </main>
 </template>
@@ -13,4 +13,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import url("~/assets/scss/page/service.scss");
+</style>
