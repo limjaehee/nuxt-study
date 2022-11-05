@@ -4,7 +4,7 @@
       <h1 class="header__logo">
         <router-link to="./" class="header__logo__link">
           <img
-            src="@/assets/image/logo.svg"
+            src="@/assets/images/logo.svg"
             alt=""
             class="header__logo__image"
             width="60px"
