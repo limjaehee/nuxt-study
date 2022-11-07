@@ -46,20 +46,20 @@
         <hr />
         <h4>Object</h4>
         <!-- 객체 -->
-        <p class="user__name">userName : {{ userInfo.name }}</p>
-        <p class="user__age">userAge : {{ userInfo.age }}</p>
+        <!-- <p class="user__name">userName : {{ userInfo.name }}</p>
+        <p class="user__age">userAge : {{ userInfo.age }}</p> -->
         <!-- 객체 -->
-        <p class="user__name">userName : {{ userInfo["name"] }}</p>
-        <p class="user__age">userAge : {{ userInfo["age"] }}</p>
+        <!-- <p class="user__name">userName : {{ userInfo["name"] }}</p>
+        <p class="user__age">userAge : {{ userInfo["age"] }}</p> -->
         <!-- array -->
         <hr />
         <h4>array</h4>
-        <p class="user__name">userName : {{ user[0] }}</p>
-        <p class="user__age">userAge : {{ user[1] }}</p>
+        <!-- <p class="user__name">userName : {{ user[0] }}</p>
+        <p class="user__age">userAge : {{ user[1] }}</p> -->
         <!-- class -->
         <hr />
         <h4>class</h4>
-        <p
+        <!-- <p
           class="user__name"
           :class="{ active: userInfo.name === myUserInfo.name }"
         >
@@ -70,11 +70,11 @@
           :class="{ active: userInfo.age === myUserInfo.age }"
         >
           userAge : {{ userInfo.age }}
-        </p>
+        </p> -->
         <!-- 그 외 -->
         <hr />
         <h4>그 외</h4>
-        <a :href="naver.link" :id="naver.id">{{ naver.label }} 페이지로 가기</a>
+        <!-- <a :href="naver.link" :id="naver.id">{{ naver.label }} 페이지로 가기</a>
         <p
           :style="[
             { color: styleColor, 'text-decoration': underline },
@@ -82,7 +82,7 @@
           ]"
         >
           스타일 인라인 적용 해보자~
-        </p>
+        </p> -->
       </div>
     </section>
   </main>
