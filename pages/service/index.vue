@@ -33,14 +33,95 @@
         </ul>
       </div>
     </section>
+    <!-- 
+    v-bind는 html의 속성인 id, class, style등에 대해 
+    model의 데이터를 연곃할 때 사용된다.
+    편의상 v-bind는 생략하고 사용하기도 한다.
+    [v-bind: 속성명 = 사용할 값]
+    -->
+    <section class="user">
+      <div class="inner">
+        <p class="user__name">userName : {{ userName }}</p>
+        <p class="user__age">userAge : {{ userAge }}</p>
+        <hr />
+        <h4>Object</h4>
+        <!-- 객체 -->
+        <p class="user__name">userName : {{ userInfo.name }}</p>
+        <p class="user__age">userAge : {{ userInfo.age }}</p>
+        <!-- 객체 -->
+        <p class="user__name">userName : {{ userInfo["name"] }}</p>
+        <p class="user__age">userAge : {{ userInfo["age"] }}</p>
+        <!-- array -->
+        <hr />
+        <h4>array</h4>
+        <p class="user__name">userName : {{ user[0] }}</p>
+        <p class="user__age">userAge : {{ user[1] }}</p>
+        <!-- class -->
+        <hr />
+        <h4>class</h4>
+        <p
+          class="user__name"
+          :class="{ active: userInfo.name === myUserInfo.name }"
+        >
+          userName : {{ userInfo.name }}
+        </p>
+        <p
+          class="user__age"
+          :class="{ active: userInfo.age === myUserInfo.age }"
+        >
+          userAge : {{ userInfo.age }}
+        </p>
+        <!-- 그 외 -->
+        <hr />
+        <h4>그 외</h4>
+        <a :href="naver.link" :id="naver.id">{{ naver.label }} 페이지로 가기</a>
+        <p
+          :style="[
+            { color: styleColor, 'text-decoration': underline },
+            aniStyle,
+          ]"
+        >
+          스타일 인라인 적용 해보자~
+        </p>
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+
+const myUserInfo = {
+  name: "kiki",
+  age: 3000,
+};
+
 export default {
   components: {
     Header,
+  },
+  data() {
+    return {
+      userName: "kiki",
+      userAge: 3000,
+      userInfo: {
+        name: "kiki",
+        age: 3000,
+      },
+      user: ["kiki", 3000],
+      myUserInfo: myUserInfo,
+      naver: {
+        link: "https://www.naver.com",
+        label: "네이버",
+        id: "Naver",
+      },
+      styleColor: "orange",
+      underline: "underline",
+      aniStyle: {
+        "padding-left": "20px",
+        "background-color": "#f9f9f9",
+      },
+    };
   },
 };
 </script>
