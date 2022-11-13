@@ -1,7 +1,5 @@
 <template>
   <main class="service">
-    <cite>sdflksdf</cite>
-    <Header></Header>
     <section class="picture">
       <div class="inner">
         <h2 class="service__title">사진 목록</h2>
@@ -89,17 +87,13 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-
 const myUserInfo = {
   name: "kiki",
   age: 3000,
 };
 
 export default {
-  components: {
-    Header,
-  },
+  components: {},
   data() {
     return {
       userName: "kiki",
