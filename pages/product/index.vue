@@ -2,14 +2,73 @@
   <div class="main">
     <h2>국내 야구팀</h2>
     <ul class="card">
-      <li
+      <li class="card__item" v-for="item in baseballTeamList" :key="item.i">
+        <div class="card__item__logo">
+          <img
+            :src="require(`@/assets/images/${item.logo}.png`)"
+            alt="야구 로고"
+          />
+        </div>
+        <div class="card__item__cont">
+          <h3>
+            <span> {{ item.title }}</span>
+            <span class="badge">{{ item.rank }}등</span>
+          </h3>
+        </div>
+      </li>
+
+      <!-- <li class="card__item" v-for="item in baseballTeamList" :key="item.i">
+        <div class="card__item__logo">
+          <img
+            :src="require(`@/assets/images/${item.logo}.png`)"
+            alt="야구 로고"
+            v-if="item.logo"
+          />
+          <img
+            src="@/assets/images/logo_none.png"
+            alt="야구 로고 없음"
+            v-else
+          />
+        </div>
+        <div class="card__item__cont">
+          <h3>
+            <span> {{ item.title }}</span>
+
+            <span class="badge" v-if="item.rank < 4">{{ item.rank }}등</span>
+          </h3>
+        </div>
+      </li> -->
+
+      <!-- <li class="card__item" v-for="item in baseballTeamList" :key="item.i">
+        <div class="card__item__logo">
+          <img
+            :src="require(`@/assets/images/${item.logo}.png`)"
+            alt="야구 로고"
+            v-if="item.logo"
+          />
+          <img
+            src="@/assets/images/logo_none.png"
+            alt="야구 로고 없음"
+            v-else
+          />
+        </div>
+        <div class="card__item__cont">
+          <h3>
+            <span> {{ item.title }}</span>
+
+            <span class="badge" v-if="item.rank < 4">{{ item.rank }}등</span>
+          </h3>
+          <p v-html="item.inform"></p>
+        </div>
+      </li> -->
+
+      <!-- <li
         class="card__item"
         v-for="item in baseballTeamList"
         :key="item.i"
         @click="goDetailPage(item.id)"
       >
         <div class="card__item__logo">
-          <!-- v-if / v-show 의 차이점 -->
           <img
             :src="require(`@/assets/images/${item.logo}.png`)"
             alt="야구 로고"
@@ -34,17 +93,26 @@
           </h3>
           <p v-html="item.inform"></p>
         </div>
-      </li>
+      </li> -->
     </ul>
     <h2>당신의 MBTI는?</h2>
     <div class="my-mbti">
+      <input type="text" v-model="myMbti" />
+      <button class="my-mbti__reset-btn">reset</button>
+      <p>
+        안녕하세요 저의 MBTI는
+        <span class="badge" v-if="myMbti">{{ myMbti }}</span> 입니다.
+      </p>
+    </div>
+
+    <!-- <div class="my-mbti">
       <input type="text" v-model="myMbti" @input="inputMbti" />
       <button class="my-mbti__reset-btn" @click="reset">reset</button>
       <p>
         안녕하세요 저의 MBTI는
         <span class="badge" v-if="myMbti">{{ myMbti }}</span> 입니다.
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -80,7 +148,7 @@ export default {
           id: 4,
         },
         {
-          logo: "",
+          logo: "logo_samsung",
           title: "삼성",
           rank: 5,
           id: 5,
