@@ -6,11 +6,11 @@
 </template>
 
 <script>
-import ClassItem from "@/components/ClassItem";
 import value from "@/mixin/value.js";
+import ClassItem from "@/components/ClassItem";
 
 export default {
-  mixin: [value],
+  mixins: [value],
   components: {
     ClassItem,
   },
