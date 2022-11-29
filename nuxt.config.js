@@ -30,11 +30,14 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/style-resources"],
+  modules: ["@nuxtjs/style-resources", "@nuxtjs/axios"],
   styleResources: {
     scss: ["@assets/scss/variables.scss"],
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  axios: {
+    baseURL: "http://localhost:3001/",
+  },
 };
