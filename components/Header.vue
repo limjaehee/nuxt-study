@@ -14,25 +14,23 @@
       <nav class="header__nav">
         <ul class="header__gnb">
           <li class="header__gnb__item">
-            <router-link to="./" class="header__link">홈</router-link>
+            <router-link to="/" class="header__link">홈</router-link>
           </li>
           <li class="header__gnb__item">
-            <router-link to="./service" class="header__link"
-              >서비스</router-link
-            >
+            <router-link to="/service" class="header__link">서비스</router-link>
           </li>
           <li class="header__gnb__item">
-            <router-link to="./product" class="header__link"
+            <router-link to="/product" class="header__link"
               >상품소개</router-link
             >
           </li>
           <li class="header__gnb__item">
-            <router-link to="./community" class="header__link"
+            <router-link to="/community" class="header__link"
               >커뮤니티</router-link
             >
           </li>
           <li class="header__gnb__item">
-            <router-link to="./main" class="header__link">문의하기</router-link>
+            <router-link to="/qna" class="header__link">문의하기</router-link>
           </li>
         </ul>
       </nav>

@@ -40,37 +40,40 @@ export default {
     };
   },
   methods: {
+    // getData() {
+    //   this.$axios.$get("/todoList").then(
+    //     (response) =>
+    //       (this.todoList = response.map((item) => {
+    //         return {
+    //           ...item,
+    //           modify: false,
+    //         };
+    //       }))
+    //   );
+    // },
     getData() {
-      this.$axios.$get("/todoList").then(
-        (response) =>
-          (this.todoList = response.map((item) => {
+      this.sendGet(
+        "/todoList",
+        "",
+        (response) => {
+          this.todoList = response.map((item) => {
             return {
               ...item,
               modify: false,
             };
-          }))
+          });
+        },
+        (response) => {
+          alert(response);
+        }
       );
     },
-    /*
-    getData() {
-      this.sendGet("/todoList", "", (response) => {
-        this.todoList = response.map((item) => {
-          return {
-            ...item,
-            modify: false,
-          };
-        });
-      });
-    },
-    */
-    deleteData(id) {
-      this.$axios.$delete(`/todoList/${id}`).then((response) => this.getData());
-    },
-    /*
+    // deleteData(id) {
+    //   this.$axios.$delete(`/todoList/${id}`).then((response) => this.getData());
+    // },
     deleteData(id) {
       this.sendDelete(`/todoList/${id}`, (response) => this.getData());
     },
-    */
     newData() {
       let data = {
         title: this.createTitle,
