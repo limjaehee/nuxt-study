@@ -1,55 +1,31 @@
 <template>
   <div>
-    <input type="text" v-model="inputValue" />
-    <ClassItem v-for="item in classList" :key="item.i" :item="item"></ClassItem>
+    <div>
+      {{ this.$store.state.count }}
+      {{ count }}
+    </div>
+    <button @click="increaseCnt()">증가하기</button>
   </div>
 </template>
 
 <script>
 import value from "@/mixin/value.js";
-import ClassItem from "@/components/ClassItem";
 
 export default {
   mixins: [value],
-  components: {
-    ClassItem,
-  },
-  data() {
-    return {
-      inputValue: null,
-      classList: [
-        {
-          name: "kiki",
-          message: "hello world",
-          user: {
-            id: 20,
-            type: 1,
-            price: 2000,
-          },
-          published_lecture: [
-            {
-              id: 1,
-            },
-            {
-              id: 2,
-            },
-          ],
-        },
-        {
-          name: "어쩌구",
-          message: "hello!!",
-        },
-      ],
-    };
-  },
-  watch: {
-    inputValue(value) {
-      console.log(value);
+  components: {},
+  computed: {
+    count() {
+      return this.$store.getters.getIncreaseCount; //3
     },
   },
-  methods: {},
+  methods: {
+    increaseCnt() {
+      this.$store.commit("addCounter", 10);
+    },
+  },
   mounted() {
-    this.formattedDate();
+    this.$store.dispatch("getCounter");
   },
 };
 </script>
